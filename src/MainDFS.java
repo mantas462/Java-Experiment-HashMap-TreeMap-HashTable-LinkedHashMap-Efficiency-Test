@@ -1,60 +1,22 @@
-import java.util.*;
+public class MainDFS {
 
-class Graph
-{
-    private int V;
+    public static void main(String [] args) {
 
-    private LinkedList<Integer> adj[];
+        long startTime=System.nanoTime();
 
-    Graph(int v)
-    {
-        V = v;
-        adj = new LinkedList[v];
-        for (int i=0; i<v; ++i)
-            adj[i] = new LinkedList();
-    }
+        System.out.println("eee");
 
-    void addEdge(int v, int w)
-    {
-        adj[v].add(w);
-    }
+        String first="m";
+        String second="n";
 
-    void DFSUtil(int v,boolean visited[])
-    {
-        visited[v] = true;
-        System.out.print(v+" ");
+        for(int i=0; i<2000; i++) {
+            first=first+"ms";
+            second=second+"n";
 
-        Iterator<Integer> i = adj[v].listIterator();
-        while (i.hasNext())
-        {
-            int n = i.next();
-            if (!visited[n])
-                DFSUtil(n, visited);
         }
+
+        long endTime=System.nanoTime();
+        long timeElapsed=endTime-startTime;
+        System.out.println(timeElapsed);
+
     }
-
-    void DFS(int v)
-    {
-
-        boolean visited[] = new boolean[V];
-
-        DFSUtil(v, visited);
-    }
-
-    public static void main(String args[])
-    {
-        Graph g = new Graph(4);
-
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
-
-        System.out.println("Following is Depth First Traversal "+
-                "(starting from vertex/point 2)");
-
-        g.DFS(2);
-    }
-} 

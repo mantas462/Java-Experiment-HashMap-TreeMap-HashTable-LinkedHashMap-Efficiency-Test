@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
@@ -8,7 +9,7 @@ public class MainDFS {
 
         long startTime=System.nanoTime();
 
-        LinkedHashMap<String, String> linkedHashMap=new LinkedHashMap<String, String>();
+        Hashtable<String, String> hashTable=new Hashtable<String, String>();
 
         String first="m";
         String second="n";
@@ -16,7 +17,7 @@ public class MainDFS {
         for(int i=0; i<2000; i++) {
             first=first+"ms";
             second=second+"n";
-            linkedHashMap.put(first,second);
+            hashTable.put(first,second);
         }
 
         long endTime=System.nanoTime();
